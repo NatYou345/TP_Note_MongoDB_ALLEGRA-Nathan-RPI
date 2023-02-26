@@ -1,21 +1,21 @@
 function addStudent() {
   // Je récupère l'ensemble des informations de mon formulaire
-  var nom = document.querySelector('#nom');
-  var dateDeNaissance = document.querySelector('#dateDeNaissance');
-  var classe = document.querySelector('#classe');
-  var email = document.querySelector('#email');
-  var sexe = document.querySelector('#sexe');
+  var name = document.querySelector('#name');
+  var genre = document.querySelector('#genre');
+  var pays = document.querySelector('#pays');
+  var date = document.querySelector('#date');
+  var synopsis = document.querySelector('#synopsis');
 
   // Objet temporaire respectant la même structure que le schéma du model
   var tmp = {
-    nom: nom.value,
-    dateDeNaissance: dateDeNaissance.value,
-    classe: classe.value,
-    email: email.value,
-    sexe: sexe.value
+    nom: name.value,
+    genre: genre.value,
+    pays: pays.value,
+    date: date.value,
+    synopsis: synopsis.value
   };
 
-  let url = '/students';
+  let url = '/student';
 
   let options = {
     method: 'POST',
@@ -32,14 +32,14 @@ function addStudent() {
   .then((res) => {
     if(res.ok) {
       addOneLine(tmp);
-      document.forms['formEtudiant'].reset(); // je selectionne parmis tous les forms de la page celui d'identifiant formEtudiant 
+      document.forms['formEtudiant'].reset(); // je selectionne parmis tous les forms de la page celui d'identifiant formSpe 
       // .reset() permet de remettre à vide les champs du form
     }
   });
 }
 
-function deleteMovie(id) {
-  let url = '/students/' + id;
+function deleteStudent(id) {
+  let url = '/student/' + id;
   let options = {
     method: 'DELETE',
   }
@@ -47,7 +47,7 @@ function deleteMovie(id) {
   fetch(url, options)
     .then((res) => {
       if(res.ok) {
-        window.location.href = '/pages/student.html';
+        window.location.href = '/pages/film.html';
       }
     })
 }
@@ -80,7 +80,7 @@ function addOneLine(data) {
   newLine.appendChild(tdSuppr);
 
   btnSuppr.addEventListener('click', (e) => {
-    deleteMovie(data._id);
+    deleteStudent(data._id);
   });
 
   tab.appendChild(newLine);
@@ -91,11 +91,11 @@ var btn = document.querySelector('#valider');
 btn.addEventListener('click', (e) => {
   // je stop l'action par défaut du bouton
   e.preventDefault();
-  addMovie();
+  addStudent();
 });
 
 let myHeaders = new Headers();
-let url = '/students';
+let url = '/student';
 
 let options = {
   method: 'GET',

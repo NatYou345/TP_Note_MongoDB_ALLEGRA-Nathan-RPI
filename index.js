@@ -26,6 +26,8 @@ promise.then((db) => {
   });
 })
 
+app.use('/pages', express.static('./client/pages'));
+app.use('/assets', express.static('./client/assets'));
 app.use(require('express').json());
 
 // Quand mon application est sollicitée à la racine ....

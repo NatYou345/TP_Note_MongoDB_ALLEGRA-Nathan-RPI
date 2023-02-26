@@ -1,15 +1,15 @@
 const mongoose =require('mongoose');
 
 const studentSchema = mongoose.Schema({
-    name: {
+    nom: {
         type: String,
         required: true,
     },
-    birthday: {
+    dateDeNaissance: {
         type: Date,
         required: true,
     },
-    class: {
+    classe: {
         type: String,
         required: true,    
     },
@@ -18,7 +18,7 @@ const studentSchema = mongoose.Schema({
         required: true,
         unique: true,
     },
-    boy_or_girl: {
+    sexe: {
         type: String,
         required:true,
     }
