@@ -1,18 +1,18 @@
 function addStudent() {
   // Je récupère l'ensemble des informations de mon formulaire
-  var name = document.querySelector('#name');
-  var genre = document.querySelector('#genre');
-  var pays = document.querySelector('#pays');
-  var date = document.querySelector('#date');
-  var synopsis = document.querySelector('#synopsis');
+  var nom = document.querySelector('#nom');
+  var dateDeNaissance = document.querySelector('#dateDeNaissance');
+  var classe = document.querySelector('#classe');
+  var email = document.querySelector('#email');
+  var sexe = document.querySelector('#sexe');
 
   // Objet temporaire respectant la même structure que le schéma du model
   var tmp = {
-    nom: name.value,
-    genre: genre.value,
-    pays: pays.value,
-    date: date.value,
-    synopsis: synopsis.value
+    nom: nom.value,
+    dateDeNaissance: dateDeNaissance.value,
+    classe: classe.value,
+    email: email.value,
+    sexe: sexe.value
   };
 
   let url = '/student';
@@ -47,7 +47,7 @@ function deleteStudent(id) {
   fetch(url, options)
     .then((res) => {
       if(res.ok) {
-        window.location.href = '/pages/film.html';
+        window.location.href = '/pages/student.html';
       }
     })
 }
