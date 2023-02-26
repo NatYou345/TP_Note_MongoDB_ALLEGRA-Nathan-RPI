@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <title>Gestion des étudiants</title>
+</head>
+<body>
+  <article>
+    <header>
+      <a href="../index.html">Accueil</a>
+      <h1> Gestion des étudiants</h1>
+    </header>
+    <div class="container">
+      <div class="row">
+        <div class="col-8">
+          <table class="table table-sm table-bordered table-striped">
+            <thead>
+              <tr>
+                <th>Nom</th>
+                <th>Date de naissance</th>
+                <th>Classe</th>
+                <th>Email</th>
+                <th>Sexe</th>
+                <th>Détails</th>
+                <th>Suppression</th>
+              </tr>
+            </thead>
+            <tbody id="movies">
+
+            </tbody>
+          </table>
+        </div>
+        <div class="col-4" id="form">
+          <form name="form" id="formSpe">
+            <!-- div.row*2>div.col-6*2>div.form-group>label+br+input.form-control -->
+            <div class="row">
+              <div class="col-6">
+                <div class="form-group">
+                  <label for="name">Nom</label>
+                  <br>
+                  <input type="text" class="form-control" id="name">
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="form-group">
+                  <label for="genre">Genre</label>
+                  <br>
+                  <input type="text" class="form-control" id="genre">
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-6">
+                <div class="form-group">
+                  <label for="pays">Pays</label>
+                  <br>
+                  <input type="text" class="form-control" id="pays">
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="form-group">
+                  <label for="date">Date</label>
+                  <br>
+                  <input type="text" class="form-control" id="date">
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-12">
+                <div class="form-group">
+                  <label for="synopsis">Synopsis</label>
+                  <br>
+                  <textarea id="synopsis" cols="30" rows="10" class="form-control"></textarea>
+                </div>
+              </div>
+            </div>
+          </form>
+          <div class="validation">
+            <button class="btn btn-outline-success" id="valid">Valider</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </article>
+  <script src="../assets/js/film.js"></script>
+</body>
+</html>
