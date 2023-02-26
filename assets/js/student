@@ -15,7 +15,7 @@ function addStudent() {
     sexe: sexe.value
   };
 
-  let url = '/student';
+  let url = '/students';
 
   let options = {
     method: 'POST',
@@ -32,14 +32,14 @@ function addStudent() {
   .then((res) => {
     if(res.ok) {
       addOneLine(tmp);
-      document.forms['formSpe'].reset(); // je selectionne parmis tous les forms de la page celui d'identifiant formSpe 
+      document.forms['formEtudiant'].reset(); // je selectionne parmis tous les forms de la page celui d'identifiant formEtudiant 
       // .reset() permet de remettre à vide les champs du form
     }
   });
 }
 
 function deleteMovie(id) {
-  let url = '/movies/' + id;
+  let url = '/students/' + id;
   let options = {
     method: 'DELETE',
   }
@@ -53,7 +53,7 @@ function deleteMovie(id) {
 }
 
 function addOneLine(data) {
-  var tab = document.querySelector('#movies');
+  var tab = document.querySelector('#students');
   var newLine = document.createElement('tr');
   for (const prop in data) {
     if(prop != '_id' && prop != '__v') {
@@ -87,7 +87,7 @@ function addOneLine(data) {
 }
 
 // Je créé l'écouteur d'evt associé au clic du bouton validaiton
-var btn = document.querySelector('#valid');
+var btn = document.querySelector('#valider');
 btn.addEventListener('click', (e) => {
   // je stop l'action par défaut du bouton
   e.preventDefault();
@@ -95,7 +95,7 @@ btn.addEventListener('click', (e) => {
 });
 
 let myHeaders = new Headers();
-let url = '/movies';
+let url = '/students';
 
 let options = {
   method: 'GET',

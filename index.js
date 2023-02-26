@@ -37,7 +37,7 @@ app.get('/', (req, res) => {
 });
 
 const Student = require('./Model/student_model');
-app.post('/movies', (req, res) => {
+app.post('/students', (req, res) => {
   /*
     Je créé un nouveau film respectant
     le schéma défini dans mon modèle
@@ -66,7 +66,7 @@ app.post('/movies', (req, res) => {
   });
 });
 
-app.get('/movies', (req, res) => {
+app.get('/students', (req, res) => {
   Film.find({}, (err, obj) => {
     if(err) {
       console.log(err);
@@ -78,7 +78,7 @@ app.get('/movies', (req, res) => {
 
 // Le :id sera autimatiquement transofrmé par l'identifiant
 // envoyé par fetch
-app.get('/movies/:id', (req, res) => {
+app.get('/students/:id', (req, res) => {
   // Pour effectuer une recherche on va utiliser le modèle
   // BodyParser permet de conserver l'id dans req.params.id
   Film.findOne({_id: req.params.id}, (err, obj) => {
@@ -91,7 +91,7 @@ app.get('/movies/:id', (req, res) => {
   })
 });
 
-app.put('/movies/:id', (req, res) => {
+app.put('/students/:id', (req, res) => {
   Film.findOneAndUpdate({_id: req.params.id}, req.body, {new: true, upsert: true, setDefaultsOnInsert: true, runValidators: true}, (err, obj) => {
     if(err) {
       console.log(err);
@@ -102,7 +102,7 @@ app.put('/movies/:id', (req, res) => {
   });
 });
 
-app.delete('/movies/:id', (req, res) => {
+app.delete('/students/:id', (req, res) => {
   Film.deleteOne({_id: req.params.id}, (err, obj) => {
     if(err) {
       console.log(err);
