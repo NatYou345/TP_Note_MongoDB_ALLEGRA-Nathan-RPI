@@ -9,7 +9,7 @@
   "author": "Nathan ALlegra",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.18.2",
+    "express": "^4.18.3",
     "mongoose": "^8.1.0",
     "nodemon": "^3.0.3",
     "semver": "^7.5.4"
