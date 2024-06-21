@@ -12,6 +12,6 @@
     "express": "^4.19.2",
     "mongoose": "^8.2.4",
     "nodemon": "^3.1.0",
-    "semver": "^7.6.0"
+    "semver": "^7.6.2"
   }
 }
